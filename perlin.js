@@ -6,9 +6,10 @@ function setup() {
 
 function draw() {
   background('white');
-  for (var i = 0; i < width; i++) {
-    var x = i;
-    var maxDy = height/4;
+  var step = 7.0;
+  for (var i = 0; i < (width/step); i++) {
+    var x = i*step;
+    var maxDy = height;
     var perlinY = frameCount*0.015;
     var perlinX = i*0.02;
     var h = noise(perlinX, perlinY);
