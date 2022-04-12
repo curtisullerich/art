@@ -32,7 +32,7 @@ function drawPoint(x, y, h) {
   var c1 = lerpColor(from, to, h);
   fill(c1);
   rotate(h*radians(540));
-  var w = 100;
+  var w = h*300;
   ellipse(0, 0, w, w/2);
   pop();
 }
