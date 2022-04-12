@@ -20,10 +20,11 @@ function draw() {
 
 function drawPoint(x, y, h) {
   push();
+  translate(x, y);
   noStroke();
   fill('green');
   rotate(h*radians(540));
   var w = 100;
-  ellipse(x, y, w, w/2);
+  ellipse(0, 0, w, w/2);
   pop();
 }
