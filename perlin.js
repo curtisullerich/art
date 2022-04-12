@@ -7,7 +7,9 @@ function draw() {
   background('white');
   for (var i = 0; i < width; i++) {
     var x = i;
-    var y = x + frameCount;
+    var maxDy = height/4;
+    var dy = maxDy/2 - maxDy*random();
+    var y = height/2 + dy;
     drawPoint(x, y);
   }
 }
