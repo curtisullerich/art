@@ -13,6 +13,7 @@ function draw() {
 }
 
 function drawPoint(x, y) {
+  noStroke();
   fill('green');
   circle(x, y, 100);
 }
