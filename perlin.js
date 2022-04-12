@@ -3,7 +3,7 @@
 
 function setup() {
   createCanvas(1200, 600);
-  frameRate(15);
+  frameRate(30);
   noiseSeed(42);
 }
 
@@ -26,7 +26,7 @@ function draw() {
 function drawPoint(x, y, h) {
   push();
   translate(x, y);
-  //noStroke();
+  noStroke();
   var alpha = 0.9 * 255;
   var from = color('red')
   from.setAlpha(alpha);
