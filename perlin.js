@@ -8,7 +8,9 @@ function draw() {
   for (var i = 0; i < width; i++) {
     var x = i;
     var maxDy = height/4;
-    var dy = maxDy/2 - maxDy*random();
+    var perlinY = frameCount*0.015;
+    var perlinX = i*0.02;
+    var dy = maxDy/2 - maxDy*noise(perlinX, perlinY);
     var y = height/2 + dy;
     drawPoint(x, y);
   }
