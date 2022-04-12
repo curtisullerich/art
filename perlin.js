@@ -1,6 +1,7 @@
 function setup() {
   createCanvas(400, 400);
   frameRate(30);
+  noiseSeed(42);
 }
 
 function draw() {
@@ -10,14 +11,17 @@ function draw() {
     var maxDy = height/4;
     var perlinY = frameCount*0.015;
     var perlinX = i*0.02;
-    var dy = maxDy/2 - maxDy*noise(perlinX, perlinY);
+    var h = noise(perlinX, perlinY);
+    var dy = maxDy/2 - maxDy*h;
     var y = height/2 + dy;
-    drawPoint(x, y);
+    drawPoint(x, y, h);
   }
 }
 
-function drawPoint(x, y) {
+function drawPoint(x, y, h) {
   noStroke();
   fill('green');
-  circle(x, y, 100);
+  rotate(h*radians(540));
+  var w = 100;
+  ellipse(x, y, w, w/2);
 }
