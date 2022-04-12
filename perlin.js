@@ -1,3 +1,6 @@
+// by Curtis Ullerich (http://curtis.in)
+// inspired by https://codepen.io/bt-sugita/pen/RpZOLq
+
 function setup() {
   createCanvas(1200, 600);
   frameRate(15);
