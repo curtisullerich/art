@@ -13,9 +13,10 @@ function draw() {
     var perlinY = frameCount*0.015;
     var perlinX = i*0.02;
     var h = noise(perlinX, perlinY);
+    var h2 = noise(perlinY, perlinX);
     var dy = maxDy/2 - maxDy*h;
     var y = height/2 + dy;
-    drawPoint(x, y, h);
+    drawPoint(x, y, h2);
   }
 }
 
