@@ -5,9 +5,9 @@ function setup() {
 
 function draw() {
   background('white');
-  var y = height/2;
   for (var i = 0; i < width; i++) {
     var x = i;
+    var y = x + frameCount;
     drawPoint(x, y);
   }
 }
