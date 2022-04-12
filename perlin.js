@@ -5,7 +5,7 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+  //background('white');
   var step = 7.0;
   for (var i = 0; i < (width/step); i++) {
     var x = i*step;
