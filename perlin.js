@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-  //background('white');
+  background('white');
   var step = 7.0;
   for (var i = 0; i < (width/step); i++) {
     var x = i*step;
@@ -17,25 +17,26 @@ function draw() {
     var perlinX = i*0.02;
     var h = noise(perlinX, perlinY);
     var h2 = noise(perlinY, perlinX);
+    var h3 = noise(perlinY*3, perlinX*3);
     var dy = maxDy/2 - maxDy*h;
     var y = height/2 + dy;
-    drawPoint(x, y, h2);
+    drawPoint(x, y, h2, h3);
   }
 }
 
-function drawPoint(x, y, h) {
+function drawPoint(x, y, h, hc) {
   push();
   translate(x, y);
-  noStroke();
+  //noStroke();
   var alpha = 0.9 * 255;
   var from = color('red')
   from.setAlpha(alpha);
   var to = color('blue')
   to.setAlpha(alpha);
-  var c1 = lerpColor(from, to, h);
+  var c1 = lerpColor(from, to, hc);
   fill(c1);
   rotate(h*radians(540));
-  var w = h*300;
+  var w = h*500;
   ellipse(0, 0, w, w/2);
   pop();
 }
