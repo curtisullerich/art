@@ -23,7 +23,13 @@ function drawPoint(x, y, h) {
   push();
   translate(x, y);
   noStroke();
-  fill('green');
+  var alpha = 0.9 * 255;
+  var from = color('red')
+  from.setAlpha(alpha);
+  var to = color('blue')
+  to.setAlpha(alpha);
+  var c1 = lerpColor(from, to, h);
+  fill(c1);
   rotate(h*radians(540));
   var w = 100;
   ellipse(0, 0, w, w/2);
